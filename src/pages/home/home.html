@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="crearSerie()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Lista de series</h2>
+  <div ion-item *ngFor="let serie of lista" (click)="elegir(serie)">
+  	<div  float-left>
+      {{ serie.titulo }}
+    </div>
+    <button (click)="eliminarSerie(serie)" float-right>
+    	<ion-icon  name="trash" ></ion-icon>
+    </button>
+   </div>
+   
+</ion-content>

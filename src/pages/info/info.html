@@ -1,0 +1,36 @@
+<!--
+  Generated template for the InfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{serie.titulo}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<img src="{{serie.imagen}}" onerror="this.src='../../assets/imgs/404.jpg';">
+
+        
+  	<ion-item>
+      <iframe width="100%" [src]="url | youtube" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </ion-item>
+   <ion-card padding>
+    <b>Nº TEMPORADAS:</b> 
+      <p>{{serie.temporadas}}</p>
+    <b>GENERO:</b> 
+      <p>{{serie.genero}}</p>
+    <b>SINOPSIS:</b>
+      <p>{{serie.sinopsis}}</p>
+    
+    
+  </ion-card>
+
+  
+</ion-content>
