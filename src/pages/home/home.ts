@@ -7,9 +7,9 @@ import { InfoPage } from '../info/info';
   templateUrl: 'home.html'
 })
 export class HomePage {
-	lista:any[];
+	lista:any[];	//array de series
 
-
+	//establecer las series por defecto en el array
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   	this.lista= [
         { titulo:"Rick y Morty", 
@@ -45,14 +45,14 @@ export class HomePage {
 
 
   }
-
+	//enviar informacion de la serie a la pagina "info" para que este la muestre
   elegir(serie){
   	this.navCtrl.push(InfoPage, {
       serie: serie
     });
   }
 
-
+//el pop up para insertar la nueva serie
   crearSerie() {
     let prompt = this.alertCtrl.create({
       title: 'Añadir serie',
@@ -98,6 +98,7 @@ export class HomePage {
     prompt.present();
   }
 
+//coprobar si se ha creado bien y guardar la informacion en el array
   finalizarCreacion(data){
     if (data.titulo!="" && data.temporadas!="" && data.genero!="" && data.sinopsis!=""){
         this.lista.push(data);
@@ -105,6 +106,7 @@ export class HomePage {
 
   }
 
+//borrar del array. busca su posicion y lo borra
   eliminarSerie(serie){
     const index: number = this.lista.indexOf(serie);
     this.lista.splice(index, 1);

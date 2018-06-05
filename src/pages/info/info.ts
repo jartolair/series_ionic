@@ -19,8 +19,10 @@ export class InfoPage {
 	serie:any;
 	url:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+//recivir informacion
   	this.serie = navParams.get('serie');
-  	this.url="https://www.youtube.com/embed/"+this.serie.youtube;
+  //crear la direccion del video
+	this.url="https://www.youtube.com/embed/"+this.serie.youtube;
   }
 
   ionViewDidLoad() {

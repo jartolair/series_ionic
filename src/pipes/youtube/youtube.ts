@@ -12,7 +12,7 @@ export class YoutubePipe implements PipeTransform {
 	 constructor(private sanitizer: DomSanitizer) {
   }
   /**
-   * Takes a value and makes it lowercase.
+   * Tranformar enlace en uno seguro
    */
   transform(value: string, ...args) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(value);
